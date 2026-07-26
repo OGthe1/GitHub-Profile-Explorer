@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* Custom keyframe for shimmer skeleton */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    #e4e4e7 25%,
+    #f4f4f5 50%,
+    #e4e4e7 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Float animation for empty state */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Fade slide up for profile card entry */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Drift animation for magnifying glass */
+@keyframes drift {
+  0%, 100% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+}
+
+.animate-drift {
+  animation: drift 2.5s ease-in-out infinite;
+}
+
+/* Custom scrollbar for suggestions dropdown */
+.suggestions-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.suggestions-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.suggestions-scroll::-webkit-scrollbar-thumb {
+  background-color: #a1a1aa;
+  border-radius: 3px;
+}
